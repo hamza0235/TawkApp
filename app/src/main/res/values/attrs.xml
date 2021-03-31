@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TypefaceTextView">
+        <attr name="customTVFont" format="string" />
+    </declare-styleable>
+    <declare-styleable name="TypefaceEditText">
+        <attr name="customETFont" format="string" />
+    </declare-styleable>
+    <declare-styleable name="TypefaceButton">
+        <attr name="customBTFont" format="string" />
+    </declare-styleable>
+    <integer name="slide_animation_duration">300</integer>
+    <declare-styleable name="PreferencesRightIcon">
+        <attr name="right_icon" format="reference" />
+    </declare-styleable>
+</resources>

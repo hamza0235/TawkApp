@@ -1,0 +1,113 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.example.tawkapp"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.example.tawkapp.HiltTestRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:$core_version"
+    implementation "androidx.appcompat:appcompat:$app_compat_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constarint_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.legacy:legacy-support-v4:$version_fragment"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$livedata_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$livedata_version"
+    testImplementation "junit:junit:$junit_test_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+
+    // Hilt ViewModel
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_view_model_version"
+
+    // Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    // Hilt WorkManager
+    implementation "androidx.hilt:hilt-work:$hilt_work_version"
+    kapt "androidx.hilt:hilt-compiler:$hilt_work_version"
+
+    // Shimmer
+    implementation "com.facebook.shimmer:shimmer:$shimmer_version"
+
+    // Room database
+    implementation "androidx.room:room-runtime:$version_room"
+    implementation "androidx.room:room-ktx:$version_room"
+    kapt "androidx.room:room-compiler:$version_room"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$version_glide"
+
+    // TestImplementations
+    implementation "androidx.test:core:$androidx_test_version"
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "org.hamcrest:hamcrest-all:$hamcrest_version"
+    testImplementation "androidx.arch.core:core-testing:$androidarc_test_version"
+    testImplementation "org.robolectric:robolectric:$robolectric_test_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_test_version"
+    testImplementation "com.google.truth:truth:$truth_test_version"
+    testImplementation "org.mockito:mockito-core:$mock_testing_version"
+
+    // Android Test Implementations
+    androidTestImplementation "junit:junit:$junit_version"
+    androidTestImplementation "com.linkedin.dexmaker:dexmaker-mockito:$dexmaker_test_version"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_test_version"
+    androidTestImplementation "androidx.arch.core:core-testing:$androidarc_test_version"
+    androidTestImplementation "com.google.truth:truth:$truth_test_version"
+    androidTestImplementation "androidx.test.ext:junit:$androidx_junit_test_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "org.mockito:mockito-core:$mock_testing_version"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_testing_version"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_testing_version"
+    debugImplementation "androidx.fragment:fragment-testing:$fragment_testing_version"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espresso_version"
+
+    // Multidex
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+}

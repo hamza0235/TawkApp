@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TawkApp</string>
+    <string name="search">Search</string>
+    <string name="save">Save</string>
+    <string name="notes">Notes:</string>
+    <string name="add_your_notes_here">Add your notes</string>
+</resources>
